@@ -1,3 +1,7 @@
-#!/usr/bin/env bash
+#!/usr/bin/env fish
 
-echo "javascript: $(bun build clean-images-reader-mode.js --minify)"
+set -l BUILD (bun build clean-images-reader-mode.js --minify)
+set -l ENCODED_BUILD (string escape --style=url $BUILD)
+set -l BOOKMARKLET "javascript:$ENCODED_BUILD"
+
+echo $BOOKMARKLET
