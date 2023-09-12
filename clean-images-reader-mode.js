@@ -1,4 +1,4 @@
-javascript: (function () {
+;(function () {
   const removeList = ['loading', 'sizes', 'srcset', 'decoding']
 
   function purgeImageTag(node) {
